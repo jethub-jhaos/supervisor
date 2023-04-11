@@ -18,6 +18,8 @@ on:
         description: "Stable"
         required: true
         default: "false"
+  release:
+    types: ["published"]
 
 env:
   DEFAULT_PYTHON: "3.10"
@@ -87,7 +89,7 @@ jobs:
 
       - name: Build wheels
         if: needs.init.outputs.requirements == 'true'
-        uses: jethubjhaos/wheels@2022.10.1-jethub
+        uses: jethubjhaos/wheels@2022.10.1
         with:
           abi: cp310
           tag: musllinux_1_2

@@ -110,7 +110,7 @@ jobs:
 
       - name: Build wheels
         if: needs.init.outputs.requirements == 'true'
-        uses: jethubjhaos/wheels@2022.10.1-jethub
+        uses: jethubjhaos/wheels@2022.10.1
         with:
           abi: cp310
           tag: musllinux_1_2
@@ -147,7 +147,7 @@ jobs:
         run: echo "BUILD_ARGS=--test" >> $GITHUB_ENV
 
       - name: Build supervisor
-        uses: jethubjhaos/builder@2023.03.0-jethub
+        uses: jethubjhaos/builder@2023.03.0
         with:
           args: |
             $BUILD_ARGS \
@@ -243,7 +243,7 @@ jobs:
 
       - name: Build the Supervisor
         if: needs.init.outputs.publish != 'true'
-        uses: jethubjhaos/builder@2023.03.0-jethub
+        uses: jethubjhaos/builder@2023.03.0
         with:
           args: |
             --test \
